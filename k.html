@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form  class="form_overlay" method="POST" accept-charset="UTF-8" autocomplete="off" name="contact" >
+    <input type="color" name="" id="">
+  </form>  
+  <script>
+    const scriptURL ='https://script.google.com/macros/s/AKfycbxB4gtrEaCvvlVAh3wRZ8AyQNk8tEfJJ5OJn_Q3xZiuohj9TCpevbeQXoQntBHzeva0/exec'
+    const form = document.forms['contact']
+    
+    form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => document.getElementById("demo").innerHTML = "<div class=’alert alert-primary’ role=’alert’><b>Thank You for providing the details, We shall get back to you shortly !</b></div>",contact.reset())
+    .catch(error => console.error('Error!', error.message))
+    })
+    </script>
+</body>
+</html>
